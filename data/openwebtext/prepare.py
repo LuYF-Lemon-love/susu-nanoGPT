@@ -1,11 +1,19 @@
-# saves the openwebtext dataset to a binary file for training. following was helpful:
-# https://github.com/HazyResearch/flash-attention/blob/main/training/src/datamodules/language_modeling_hf.py
+# coding:utf-8
+#
+# data/openwebtext/prepare.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+#
+# 复现 GPT 的数据预处理.
+
+"""将 openwebtext 数据集保存到二进制文件中用于训练。"""
 
 import os
 from tqdm import tqdm
 import numpy as np
 import tiktoken
-from datasets import load_dataset # huggingface datasets
+from datasets import load_dataset
 
 # number of workers in .map() call
 # good number to use is ~order number of cpu cores // 2
