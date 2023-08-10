@@ -58,20 +58,27 @@ well hencefore you in the rash prisoners have to the ground.
 $ python train.py config/train_shakespeare_char.py --device=cpu --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0
 ```
 
-在这里，由于我们在 CPU 而不是 GPU 上运行，我们必须同时设置 `--device=cpu`，并关闭 PyTorch 2.0 编译，同时使用 `--compile=False`。然后，当我们进行评估时，我们得到了一个更嘈杂但更快的估计（`-eval_iters=20`，原来是 `200` ），我们的上下文大小只有 `64` 个字符，而不是 `256` 个，并且每次迭代的批大小只有 `12` 个示例，而不是 `64` 个。
-We'll also use a much smaller Transformer (4 layers, 4 heads, 128 embedding size), and decrease the number of iterations to 2000 (and correspondingly usually decay the learning rate to around max_iters with `--lr_decay_iters`). Because our network is so small we also ease down on regularization (`--dropout=0.0`). This still runs in about ~3 minutes, but gets us a loss of only 1.88 and therefore also worse samples, but it's still good fun:
+在这里，由于我们在 CPU 而不是 GPU 上运行，我们必须同时设置 `--device=cpu`，并关闭 PyTorch 2.0 编译，同时使用 `--compile=False`。然后，当我们进行评估时，我们得到了一个更嘈杂但更快的估计（`-eval_iters=20`，原来是 `200` ），我们的上下文大小只有 `64` 个字符，而不是 `256` 个，并且每次迭代的批大小只有 `12` 个示例，而不是 `64` 个。我们还将使用更小的 `Transformer`（4 层，4 个头，128 嵌入大小），并将迭代次数减少到 `2000` 次（相应地，通常使用 `--lr_decay_iters` 将学习率降低到 `max_iters` 左右）。因为我们的网络太小了，所以我们也简化了正则化（`--dropout=0.0`）。因此也有更糟糕的样本，但它仍然很有趣：
 
 ```
 $ python sample.py --out_dir=out-shakespeare-char --device=cpu
 ```
-Generates samples like this:
+
+生成如下示例：
 
 ```
-GLEORKEN VINGHARD III:
-Whell's the couse, the came light gacks,
-And the for mought you in Aut fries the not high shee
-bot thou the sought bechive in that to doth groan you,
-No relving thee post mose the wear
+Let mother fater, for moir shot.
+
+YORK:
+
+Come you, bay my my as the arfort; though a proce,
+I mone yous'd look somp.
+
+DUKE VINCENNTIzA:
+Hy shame for as the hort whoe head to more
+And that anate quien
+Gedieng all some the shant the bust thine
+As the do may tough; I with incle swoll with not.
 ```
 
 Not bad for ~3 minutes on a CPU, for a hint of the right character gestalt. If you're willing to wait longer, feel free to tune the hyperparameters, increase the size of the network, the context length (`--block_size`), the length of training, etc.
