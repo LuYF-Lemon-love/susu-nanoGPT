@@ -25,33 +25,31 @@ $ python data/shakespeare_char/prepare.py
 $ python train.py config/train_shakespeare_char.py
 ```
 
-If you peek inside it, you'll see that we're training a GPT with a context size of up to 256 characters, 384 feature channels, and it is a 6-layer Transformer with 6 heads in each layer. On one A100 GPU this training run takes about 3 minutes and the best validation loss is 1.4697. Based on the configuration, the model checkpoints are being written into the `--out_dir` directory `out-shakespeare-char`. So once the training finishes we can sample from the best model by pointing the sampling script at this directory:
+如果你仔细观察它，你会发现我们正在训练一个 GPT，其上下文大小最多为 256 个字符，384 个特征维度，它是一个 6 层的 Transformer，每层有 6 个头。根据参数 `out_dir` 模型保存在 `out-shakespeare-char`。因此，一旦训练完成，我们就可以通过将采样脚本指向以下目录来从最佳模型中采样：
 
 ```
 $ python sample.py --out_dir=out-shakespeare-char
 ```
 
-This generates a few samples, for example:
+这会生成一些示例，例如：
 
 ```
-ANGELO:
-And cowards it be strawn to my bed,
-And thrust the gates of my threats,
-Because he that ale away, and hang'd
-An one with him.
+Have he not set dropp'd her eyes and mours to another's
+body? O enborn! I do not tell thee: and thou'rt
+not scarcet upon him.
 
-DUKE VINCENTIO:
-I thank your eyes against it.
+HORTENSIO:
+Why, thou mayst prove the man gaspiness of hour it.
 
-DUKE VINCENTIO:
-Then will answer him to save the malm:
-And what have you tyrannous shall do this?
+LUCIO:
+Why should this it is, and there would die live?
 
-DUKE VINCENTIO:
-If you have done evils of all disposition
-To end his power, the day of thrust for a common men
-That I leave, to fight with over-liking
-Hasting in a roseman.
+MISTRESS OVERDONE:
+Why, I pray you, sir, the unshares Margaret.
+
+LUCIO:
+Have you not changed to his bed-bed to prove me; and here
+well hencefore you in the rash prisoners have to the ground.
 ```
 
 lol  `¯\_(ツ)_/¯`. Not bad for a character-level model after 3 minutes of training on a GPU. Better results are quite likely obtainable by instead finetuning a pretrained GPT-2 model on this dataset (see finetuning section later).
