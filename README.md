@@ -81,7 +81,7 @@ Gedieng all some the shant the bust thine
 As the do may tough; I with incle swoll with not.
 ```
 
-## reproducing GPT-2
+## 复现 GPT-2
 
 我们首先标记数据集，在本例中为 [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/)，OpenAI 的（私有）WebText的开放复制品：
 
