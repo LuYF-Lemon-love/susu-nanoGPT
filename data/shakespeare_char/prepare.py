@@ -1,9 +1,18 @@
+# coding:utf-8
+#
+# data/shakespeare_char/prepare.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+#
+# 字符级 GPT 的数据预处理.
+
 """
-Prepare the Shakespeare dataset for character-level language modeling.
-So instead of encoding with GPT-2 BPE tokens, we just map characters to ints.
-Will save train.bin, val.bin containing the ids, and meta.pkl containing the
-encoder and decoder and some other related info.
+为字符级语言模型准备莎士比亚数据集。
+因此，我们不使用 GPT-2 BPE 令牌进行编码，而是将字符映射到int。
+将保存包含 id 的 train.bin、val.bin 和包含编码器和解码器以及一些其他相关信息的 meta.pkl。
 """
+
 import os
 import pickle
 import requests
