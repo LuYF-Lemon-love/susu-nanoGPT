@@ -4,24 +4,22 @@
 ## 安装
 
 ```shell
-python -m venv env
-source env/bin/activate
-which python
-pip install --upgrade pip
-pip install torch numpy transformers datasets tiktoken wandb tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
+$ python -m venv env
+$ source env/bin/activate
+$ which python
+$ pip install --upgrade pip
+$ pip install torch numpy transformers datasets tiktoken wandb tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## quick start
+## 快速开始
 
-If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB) file and turn it from raw text into one large stream of integers:
+最快的入门方法是在莎士比亚的作品中训练一个字符级的GPT。首先，我们将下载一个（1MB）文件，并将其从原始文本转换为一个大的整数流：
 
-```
+```shell
 $ python data/shakespeare_char/prepare.py
 ```
 
-This creates a `train.bin` and `val.bin` in that data directory. Now it is time to train your GPT. The size of it very much depends on the computational resources of your system:
-
-**I have a GPU**. Great, we can quickly train a baby GPT with the settings provided in the [config/train_shakespeare_char.py](config/train_shakespeare_char.py) config file:
+这将在该数据目录中创建一个 `train.bin` 和 `val.bin`。现在是时候训练你的GPT了，配置文件为 [config/train_shakespeare_char.py](config/train_shakespeare_char.py)：
 
 ```
 $ python train.py config/train_shakespeare_char.py
