@@ -83,7 +83,7 @@ As the do may tough; I with incle swoll with not.
 
 ## reproducing GPT-2
 
-A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/), an open reproduction of OpenAI's (private) WebText:
+我们首先标记数据集，在本例中为 [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/)，OpenAI 的（私有）WebText的开放复制品：
 
 ```
 $ python data/openwebtext/prepare.py
