@@ -206,10 +206,6 @@ For more questions/discussions feel free to stop by **#nanoGPT** on Discord:
 
 [![](https://dcbadge.vercel.app/api/server/3zy8kqD9Cp?compact=true&style=flat)](https://discord.gg/3zy8kqD9Cp)
 
-## acknowledgements
-
-All nanoGPT experiments are powered by GPUs on [Lambda labs](https://lambdalabs.com), my favorite Cloud GPU provider. Thank you Lambda labs for sponsoring nanoGPT!
-
 ## 参考
 
 [1] [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT)
