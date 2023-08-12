@@ -1,3 +1,12 @@
+# coding:utf-8
+#
+# train.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 12, 2023
+#
+# GPT 训练循环.
+
 """
 This training script can be run both on a single gpu in debug mode,
 and also in a larger training run with distributed data parallel (ddp).

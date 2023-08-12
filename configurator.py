@@ -5,7 +5,7 @@
 # git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
 # updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 12, 2023
 #
-# 字符级 GPT 的数据预处理.
+# 读取配置文件.
 
 """
 该文件中的代码将从 train.py 运行如下：
