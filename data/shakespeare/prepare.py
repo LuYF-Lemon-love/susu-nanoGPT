@@ -1,3 +1,12 @@
+# coding:utf-8
+#
+# data/shakespeare_char/prepare.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 12, 2023
+#
+# 微调 GPT 的数据预处理.
+
 import os
 import requests
 import tiktoken
