@@ -8,21 +8,22 @@
 # GPT 训练循环.
 
 """
-This training script can be run both on a single gpu in debug mode,
-and also in a larger training run with distributed data parallel (ddp).
+此训练脚本既可以在调试模式下在单个 GPU 上运行，也可以在具有 distributed data parallel (DDP) 的大型服务器中运行。
 
-To run on a single GPU, example:
+要在单个 GPU 上运行，如：
+
 $ python train.py --batch_size=32 --compile=False
 
-To run with DDP on 4 gpus on 1 node, example:
+要在 1 个节点上的 4 个 GPU 上使用 DDP 运行，如：
+
 $ torchrun --standalone --nproc_per_node=4 train.py
 
-To run with DDP on 4 gpus across 2 nodes, example:
+要在 2 个节点的 4 个 GPU 上使用 DDP 运行，请执行以下操作：
+
 - Run on the first (master) node with example IP 123.456.123.456:
 $ torchrun --nproc_per_node=8 --nnodes=2 --node_rank=0 --master_addr=123.456.123.456 --master_port=1234 train.py
 - Run on the worker node:
 $ torchrun --nproc_per_node=8 --nnodes=2 --node_rank=1 --master_addr=123.456.123.456 --master_port=1234 train.py
-(If your cluster does not have Infiniband interconnect prepend NCCL_IB_DISABLE=1)
 """
 
 import os
