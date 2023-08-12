@@ -105,13 +105,13 @@ $ python sample.py
 
 ## finetuning
 
-Finetuning is no different than training, we just make sure to initialize from a pretrained model and train with a smaller learning rate. For an example of how to finetune a GPT on new text go to `data/shakespeare` and run `prepare.py` to download the tiny shakespeare dataset and render it into a `train.bin` and `val.bin`, using the OpenAI BPE tokenizer from GPT-2. Unlike OpenWebText this will run in seconds. Finetuning can take very little time, e.g. on a single GPU just a few minutes. Run an example finetuning like:
+微调与训练没有什么不同，我们只是确保从预先训练的模型中初始化，并以较小的学习率进行训练。关于如何在新文本上微调 `GPT` 的示例，请转到 `data/shakespeare` 并运行 `prepare.py` 下载小的 `shakespeare` 数据集，并使用 `GPT-2` 中的 OpenAI BPE 标记器将其呈现为 `train.bin` 和 `val.bin` 。
 
 ```
 $ python train.py config/finetune_shakespeare.py
 ```
 
-This will load the config parameter overrides in `config/finetune_shakespeare.py` (I didn't tune them much though). Basically, we initialize from a GPT2 checkpoint with `init_from` and train as normal, except shorter and with a small learning rate. If you're running out of memory try decreasing the model size (they are `{'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'}`) or possibly decreasing the `block_size` (context length). The best checkpoint (lowest validation loss) will be in the `out_dir` directory, e.g. in `out-shakespeare` by default, per the config file. You can then run the code in `sample.py --out_dir=out-shakespeare`:
+基本上，我们使用 `init_from` 从 GPT2 检查点进行初始化，并像往常一样进行训练，只是时间更短，学习率很低。如果内存不足，请尝试减小模型大小（它们是 `{'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'}`），或者可能减小 `block_size`（上下文长度）。根据配置文件，最好的检查点（最低的验证损失）将保存在 `out_dir` 目录中，例如默认情况下在 `out-shakespeare` 中。然后，您可以运行代码  `sample.py --out_dir=out-shakespeare`：
 
 ```
 THEODORE:
@@ -134,8 +134,6 @@ Thou know'st not what thou sell'st; thou, a woman,
 Thou art ever a victim, a thing of no worth:
 Thou hast no right, no right, but to be sold.
 ```
-
-Whoa there, GPT, entering some dark place over there. I didn't really tune the hyperparameters in the config too much, feel free to try!
 
 ## sampling / inference
 
