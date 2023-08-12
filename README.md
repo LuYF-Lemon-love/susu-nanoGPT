@@ -115,25 +115,23 @@ $ python train.py config/finetune_shakespeare.py
 基本上，我们使用 `init_from` 从 GPT2 检查点进行初始化，并像往常一样进行训练，只是时间更短，学习率很低。如果内存不足，请尝试减小模型大小（它们是 `{'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'}`），或者可能减小 `block_size`（上下文长度）。根据配置文件，最好的检查点（最低的验证损失）将保存在 `out_dir` 目录中，例如默认情况下在 `out-shakespeare` 中。然后，您可以运行代码  `python sample.py --out_dir=out-shakespeare`：
 
 ```
-THEODORE:
-Thou shalt sell me to the highest bidder: if I die,
-I sell thee to the first; if I go mad,
-I sell thee to the second; if I
-lie, I sell thee to the third; if I slay,
-I sell thee to the fourth: so buy or sell,
-I tell thee again, thou shalt not sell my
-possession.
+THEODORUS:
+O hush, you have nought to say of your father's war.
 
-JULIET:
-And if thou steal, thou shalt not sell thyself.
+HIPPOCENTES:
+O, but I will tell you the reason thereof.
 
-THEODORE:
-I do not steal; I sell the stolen goods.
+THEODORUS:
+O thou, Hippocrates, what didst thou answer him?
 
-THEODORE:
-Thou know'st not what thou sell'st; thou, a woman,
-Thou art ever a victim, a thing of no worth:
-Thou hast no right, no right, but to be sold.
+HIPPOCENTES:
+O, when he had so much as said, to hold his peace.
+
+THEODORUS:
+O, come home: I will trouble you not to hear all that I say.
+
+HIPPOCENTES:
+O, to hear it, and to take it well.
 ```
 
 ## sampling / inference
