@@ -4,6 +4,8 @@
 ## 安装
 
 ```shell
+$ git clone git@github.com:LuYF-Lemon-love/susu-nanoGPT.git
+$ cd susu-nanoGPT
 $ python -m venv env
 $ source env/bin/activate
 $ which python
@@ -93,6 +95,12 @@ $ python data/openwebtext/prepare.py
 
 ```
 $ python train.py config/train_gpt2.py
+```
+
+生成示例：
+
+```shell
+$ python sample.py
 ```
 
 ## baselines
