@@ -108,6 +108,7 @@ $ python sample.py
 微调与训练没有什么不同，我们只是确保从预先训练的模型中初始化，并以较小的学习率进行训练。关于如何在新文本上微调 `GPT` 的示例，请转到 `data/shakespeare` 并运行 `prepare.py` 下载小的 `shakespeare` 数据集，并使用 `GPT-2` 中的 OpenAI BPE 标记器将其呈现为 `train.bin` 和 `val.bin` 。
 
 ```
+$ python data/shakespeare/prepare.py
 $ python train.py config/finetune_shakespeare.py
 ```
 
