@@ -85,7 +85,7 @@ As the do may tough; I with incle swoll with not.
 
 ## 复现 GPT-2
 
-我们首先标记数据集，在本例中为 [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/)，OpenAI 的（私有）WebText的开放复制品：
+我们首先标记数据集，在本例中为 [OpenWebText-10k](https://huggingface.co/datasets/stas/openwebtext-10k)：
 
 ```
 $ python data/openwebtext/prepare.py
@@ -204,3 +204,7 @@ For more questions/discussions feel free to stop by **#nanoGPT** on Discord:
 [1] [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT)
 
 [2] [karpathy/minGPT](https://github.com/karpathy/minGPT)
+
+[3] [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/)：OpenAI 的（私有）WebText 的开放复制品
+
+[4] [OpenWebText-HuggingFace](https://huggingface.co/datasets/Skylion007/openwebtext)：OpenAI 的（私有）WebText 的开放复制品
