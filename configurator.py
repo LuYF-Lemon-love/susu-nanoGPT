@@ -1,17 +1,18 @@
-"""
-Poor Man's Configurator. Probably a terrible idea. Example usage:
-$ python train.py config/override_file.py --batch_size=32
-this will first run config/override_file.py, then override batch_size to 32
+# coding:utf-8
+#
+# configurator.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 12, 2023
+#
+# 字符级 GPT 的数据预处理.
 
-The code in this file will be run as follows from e.g. train.py:
+"""
+该文件中的代码将从 train.py 运行如下：
+
 >>> exec(open('configurator.py').read())
 
-So it's not a Python module, it's just shuttling this code away from train.py
-The code in this script then overrides the globals()
-
-I know people are not going to love this, I just really dislike configuration
-complexity and having to prepend config. to every single variable. If someone
-comes up with a better simple Python solution I am all ears.
+然后，此脚本中的代码将覆盖 globals()
 """
 
 import sys
