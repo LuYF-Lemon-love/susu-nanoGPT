@@ -17,15 +17,11 @@ $ pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 3. 运行脚本 `json2text.ipynb` 处理数据并训练分词器，需要 60G 内存。
 
+4. 运行 `python prepare.py` 将维基百科中文数据集保存到二进制文件中用于训练。
 
+- train.bin: ~536M
 
-after running `prepare.py` (preprocess) we get:
-
-- train.bin is ~17GB, val.bin ~8.5MB
-- train has ~9B tokens (9,035,582,198)
-- val has ~4M tokens (4,434,897)
-
-this came from 8,013,769 documents in total.
+- val.bin: ~2.5M
 
 ## 参考
 
@@ -38,3 +34,13 @@ this came from 8,013,769 documents in total.
 [4] [tokenizers/quicktour](https://huggingface.co/docs/tokenizers/quicktour)
 
 [5] [transformers/fast_tokenizers](https://huggingface.co/docs/transformers/fast_tokenizers)
+
+[6] [gpt2 简单示例](https://zhuanlan.zhihu.com/p/625791719)
+
+[7] [生成模型特殊标记含义](https://blog.csdn.net/qq_37356556/article/details/131103015)
+
+[8] [BERT和ERNIE中[PAD],[CLS],[SEP],[MASK],[UNK]所代表的含义](https://blog.csdn.net/weixin_43220532/article/details/124248411)
+
+[9] [CLUECorpus2020](https://github.com/CLUEbenchmark/CLUECorpus2020/)
+
+[10] [CLUE benchmark](https://github.com/CLUEbenchmark/CLUE)

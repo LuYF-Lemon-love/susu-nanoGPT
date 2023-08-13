@@ -42,14 +42,14 @@ split_dataset['val'] = split_dataset.pop('test')
 print(split_dataset)
 
 tokenizer = Tokenizer.from_file("tokenizer.json")
-print(f"vocab_size: {tokenizer.get_vocab_size()}, [SEP]: {tokenizer.token_to_id('[SEP]')}")
+print(f"vocab_size: {tokenizer.get_vocab_size()}, <|endoftext|>: {tokenizer.token_to_id('<|endoftext|>')}")
 print(split_dataset['train'][0])
 print(tokenizer.encode(split_dataset['train'][0]['text']).tokens)
 print(tokenizer.encode(split_dataset['train'][0]['text']).ids)
 
 def process(example):
     ids = tokenizer.encode(example['text']).ids
-    ids.append(tokenizer.token_to_id("[SEP]"))
+    ids.append(tokenizer.token_to_id("<|endoftext|>"))
     out = {'ids': ids, 'len': len(ids)}
     return out
 
