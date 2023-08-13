@@ -9,3 +9,7 @@ __pycache__/
 *.pyc
 env/
 wandb/
+data/wiki_zh_2019/wiki_zh
+data/wiki_zh_2019/wiki_zh_2019.zip
+data/wiki_zh_2019/all_5%.txt
+data/wiki_zh_2019/all.txt
