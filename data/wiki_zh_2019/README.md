@@ -1,6 +1,6 @@
 # 维基百科(wiki2019zh)，100万个结构良好的中文词条
 
-数据集为: [维基百科中文数据集](https://github.com/brightmart/nlp_chinese_corpus)包括 100 万个结构良好的中文词条。
+数据集为: [维基百科中文数据集](https://github.com/brightmart/nlp_chinese_corpus)包括 100 万个结构良好的中文词条（1,043,224 条数据）。
 
 1. 解压数据集：
 
