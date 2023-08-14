@@ -178,3 +178,7 @@ For simple model benchmarking and profiling, `bench.py` might be useful. It's id
 [12] [the official GPT-2 TensorFlow implementation released by OpenAI](https://github.com/openai/gpt-2/blob/master/src/model.py)
 
 [13] [huggingface/transformers PyTorch GPT-2 implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
+
+[14] [@classmethod](https://docs.python.org/zh-cn/3/library/functions.html?highlight=classmethod#classmethod)
+
+[15] [@classmethod是什么意思？Python](https://blog.csdn.net/qq_33945243/article/details/129409350)
