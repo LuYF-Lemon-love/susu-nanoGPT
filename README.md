@@ -182,3 +182,7 @@ For simple model benchmarking and profiling, `bench.py` might be useful. It's id
 [14] [@classmethod](https://docs.python.org/zh-cn/3/library/functions.html?highlight=classmethod#classmethod)
 
 [15] [@classmethod是什么意思？Python](https://blog.csdn.net/qq_33945243/article/details/129409350)
+
+[16] [Implementing Custom Decoders?](https://github.com/huggingface/tokenizers/issues/636)
+
+[17] [custom_components.py](https://github.com/huggingface/tokenizers/blob/9a93c50c25c1e0b73a85584f327113bcbef5ac80/bindings/python/examples/custom_components.py#L44)

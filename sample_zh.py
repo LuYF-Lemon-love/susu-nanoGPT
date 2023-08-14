@@ -12,6 +12,8 @@ import pickle
 from contextlib import nullcontext
 import torch
 from tokenizers import Tokenizer
+from tokenizers.decoders import Decoder
+from typing import List
 from model import GPTConfig, GPT
 
 # -----------------------------------------------------------------------------
@@ -71,7 +73,11 @@ if load_meta:
     decode = lambda l: ''.join([itos[i] for i in l])
 else:
     print("加载分词器...")
+    class CustomDecoder:
+        def decode_chain(self, tokens: List[str]) -> List[str]:
+            return [f"{t}" for t in tokens]
     tokenizer = Tokenizer.from_file("data/wiki_zh_2019/tokenizer.json")
+    tokenizer.decoder = Decoder.custom(CustomDecoder())
     encode = lambda s: tokenizer.encode(s).ids
     decode = lambda l: tokenizer.decode(l)
 
