@@ -17,7 +17,7 @@ from model import GPTConfig, GPT
 # -----------------------------------------------------------------------------
 init_from = 'resume'
 out_dir = 'out'
-start = "\n"
+start = "中国"
 num_samples = 10
 max_new_tokens = 500
 temperature = 0.8
