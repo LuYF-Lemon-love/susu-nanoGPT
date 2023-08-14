@@ -160,3 +160,17 @@ For simple model benchmarking and profiling, `bench.py` might be useful. It's id
 [3] [OpenWebText](https://openwebtext2.readthedocs.io/en/latest/)：OpenAI 的（私有）WebText 的开放复制品
 
 [4] [OpenWebText-HuggingFace](https://huggingface.co/datasets/Skylion007/openwebtext)：OpenAI 的（私有）WebText 的开放复制品
+
+[5] [eval和ast.literal_eval方法](https://blog.csdn.net/sinat_33924041/article/details/88350569)
+
+[6] [CUDA_VISIBLE_DEVICES作用](https://blog.csdn.net/pxm_wzs/article/details/127886259)
+
+[7] [设置CUDA_VISIBLE_DEVICES的方法](https://blog.csdn.net/B_DATA_NUIST/article/details/107973053)
+
+[8] [Python 和 C++ 内存映射](http://139.129.163.161/index/toolkits)
+
+[9] [contextlib.nullcontext(enter_result=None)](https://docs.python.org/zh-cn/3/library/contextlib.html?highlight=nullcontext#contextlib.nullcontext)
+
+[10] [docs.wandb.ai/quickstart](https://docs.wandb.ai/quickstart)
+
+[11] [Typical Mixed Precision Training](https://pytorch.org/docs/stable/notes/amp_examples.html#amp-examples)
