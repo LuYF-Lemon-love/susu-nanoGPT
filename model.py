@@ -1,11 +1,11 @@
-"""
-Full definition of a GPT Language Model, all of it in this single file.
-References:
-1) the official GPT-2 TensorFlow implementation released by OpenAI:
-https://github.com/openai/gpt-2/blob/master/src/model.py
-2) huggingface/transformers PyTorch implementation:
-https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py
-"""
+# coding:utf-8
+#
+# model.py
+#
+# git pull from nanoGPT by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 10, 2023
+# updated by LuYF-Lemon-love <luyanfeng_nlp@qq.com> on August 14, 2023
+#
+# GPT 模型定义.
 
 import math
 import inspect

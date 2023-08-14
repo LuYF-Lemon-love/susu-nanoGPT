@@ -174,3 +174,7 @@ For simple model benchmarking and profiling, `bench.py` might be useful. It's id
 [10] [docs.wandb.ai/quickstart](https://docs.wandb.ai/quickstart)
 
 [11] [Typical Mixed Precision Training](https://pytorch.org/docs/stable/notes/amp_examples.html#amp-examples)
+
+[12] [the official GPT-2 TensorFlow implementation released by OpenAI](https://github.com/openai/gpt-2/blob/master/src/model.py)
+
+[13] [huggingface/transformers PyTorch GPT-2 implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
