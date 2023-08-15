@@ -112,3 +112,5 @@ $ python sample.py \
 [16] [Implementing Custom Decoders?](https://github.com/huggingface/tokenizers/issues/636)
 
 [17] [custom_components.py](https://github.com/huggingface/tokenizers/blob/9a93c50c25c1e0b73a85584f327113bcbef5ac80/bindings/python/examples/custom_components.py#L44)
+
+[18] [OpenWebText-10k](https://huggingface.co/datasets/stas/openwebtext-10k)
