@@ -9,19 +9,15 @@ $ cd data/wiki_zh_2019/
 $ unzip wiki_zh_2019.zip
 ```
 
-2. 安装 jupyter:
+2. 运行脚本 `json2text.ipynb` 处理数据并训练分词器，需要 60G 内存。
 
-```shell
-$ pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
-3. 运行脚本 `json2text.ipynb` 处理数据并训练分词器，需要 60G 内存。
-
-4. 运行 `python prepare.py` 将维基百科中文数据集保存到二进制文件中用于训练。
+3. 运行 `python prepare.py` 将维基百科中文数据集保存到二进制文件中用于训练。
 
 - train.bin: ~536M
 
 - val.bin: ~2.5M
+
+数据集 (`wiki_zh_2019.zip`): 
 
 ## 参考
 
