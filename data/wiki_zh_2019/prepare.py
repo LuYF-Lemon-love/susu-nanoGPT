@@ -16,7 +16,7 @@ from tqdm import tqdm
 from datasets import Dataset
 from tokenizers import Tokenizer
 
-num_proc = 128
+num_proc = 64
 
 def read_jsonl(jsonl_file):
     text_list = []
@@ -37,19 +37,19 @@ print(text_list[0])
 
 data_dict = {"text": text_list}
 dataset = Dataset.from_dict(data_dict)
-split_dataset = dataset.train_test_split(test_size=0.005, seed=2357, shuffle=True)
+split_dataset = dataset.train_test_split(test_size=0.005, seed=42, shuffle=True)
 split_dataset['val'] = split_dataset.pop('test')
 print(split_dataset)
 
 tokenizer = Tokenizer.from_file("tokenizer.json")
-print(f"vocab_size: {tokenizer.get_vocab_size()}, <|endoftext|>: {tokenizer.token_to_id('<|endoftext|>')}")
+print(f"vocab_size: {tokenizer.get_vocab_size()}, [EOT]: {tokenizer.token_to_id('[EOT]')}")
 print(split_dataset['train'][0])
 print(tokenizer.encode(split_dataset['train'][0]['text']).tokens)
 print(tokenizer.encode(split_dataset['train'][0]['text']).ids)
 
 def process(example):
     ids = tokenizer.encode(example['text']).ids
-    ids.append(tokenizer.token_to_id("<|endoftext|>"))
+    ids.append(tokenizer.token_to_id("[EOT]"))
     out = {'ids': ids, 'len': len(ids)}
     return out
 
@@ -66,7 +66,7 @@ for split, dset in tokenized.items():
     filename = os.path.join(os.path.dirname(__file__), f'{split}.bin')
     dtype = np.uint16
     arr = np.memmap(filename, dtype=dtype, mode='w+', shape=(arr_len,))
-    total_batches = 1024
+    total_batches = 32
     idx = 0
     for batch_idx in tqdm(range(total_batches), desc=f'writing {filename}'):
         # Batch together samples for faster write

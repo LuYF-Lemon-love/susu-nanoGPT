@@ -9,7 +9,7 @@ $ cd data/wiki_zh_2019/
 $ unzip wiki_zh_2019.zip
 ```
 
-2. 运行脚本 `json2text.ipynb` 处理数据并训练分词器，需要 60G 内存。
+2. 运行脚本 `jsonl2text.ipynb` 处理数据并训练分词器，需要 60G 内存。
 
 3. 运行 `python prepare.py` 将维基百科中文数据集保存到二进制文件中用于训练。
 
@@ -17,7 +17,7 @@ $ unzip wiki_zh_2019.zip
 
 - val.bin: ~2.5M
 
-数据集 (`wiki_zh_2019.zip`): 
+数据集 (`wiki_zh_2019.zip`): 链接：https://pan.baidu.com/s/1bkukbbKUoyt0gjnOyqMOtA?pwd=fxc1 提取码：fxc1
 
 ## 参考
 
