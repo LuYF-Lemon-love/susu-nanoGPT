@@ -13,19 +13,6 @@ $ pip install --upgrade pip
 $ pip install torch numpy transformers datasets tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 抽样 / 推断
-
-使用脚本 `sample.py` 可以从 OpenAI 发布的预先训练的 GPT-2 模型中进行采样，也可以从您自己训练的模型中采样。例如，这里有一种从最大的可用 `gpt2-xl` 模型中采样的方法：
-
-```
-$ python sample.py \
-    --init_from=gpt2-xl \
-    --start="What is the answer to life, the universe, and everything?" \
-    --num_samples=5 --max_new_tokens=100
-```
-
-如果您想从您训练的模型中进行采样，请使用 `--out_dir` 适当地指向代码。您还可以用文件中的一些文本提示模型，例如 `$ python sample.py --start=FILE:prompt.txt`。
-
 ## 参考
 
 [1] [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT)
