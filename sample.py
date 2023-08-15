@@ -8,7 +8,6 @@
 # GPT 生成样本.
 
 import os
-import pickle
 from contextlib import nullcontext
 import torch
 from tokenizers import Tokenizer
@@ -17,7 +16,6 @@ from typing import List
 from model import GPTConfig, GPT
 
 # -----------------------------------------------------------------------------
-init_from = 'resume'
 out_dir = 'out'
 start = "生命、宇宙和一切的答案是什么？"
 num_samples = 10
