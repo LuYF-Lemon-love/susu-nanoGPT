@@ -10,77 +10,7 @@ $ python -m venv env
 $ source env/bin/activate
 $ which python
 $ pip install --upgrade pip
-$ pip install torch numpy transformers datasets tiktoken wandb tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
-## 快速开始
-
-最快的入门方法是在莎士比亚的作品中训练一个字符级的GPT。首先，我们将下载一个（1MB）文件，并将其从原始文本转换为一个大的整数流：
-
-```shell
-$ python data/shakespeare_char/prepare.py
-```
-
-这将在该数据目录中创建一个 `train.bin` 和 `val.bin`。现在是时候训练你的GPT了，配置文件为 [config/train_shakespeare_char.py](config/train_shakespeare_char.py)：
-
-```
-$ python train.py config/train_shakespeare_char.py
-```
-
-如果你仔细观察它，你会发现我们正在训练一个 GPT，其上下文大小最多为 256 个字符，384 个特征维度，它是一个 6 层的 Transformer，每层有 6 个头。根据参数 `out_dir` 模型保存在 `out-shakespeare-char`。因此，一旦训练完成，我们就可以通过将采样脚本指向以下目录来从最佳模型中采样：
-
-```
-$ python sample.py --out_dir=out-shakespeare-char
-```
-
-这会生成一些示例，例如：
-
-```
-Have he not set dropp'd her eyes and mours to another's
-body? O enborn! I do not tell thee: and thou'rt
-not scarcet upon him.
-
-HORTENSIO:
-Why, thou mayst prove the man gaspiness of hour it.
-
-LUCIO:
-Why should this it is, and there would die live?
-
-MISTRESS OVERDONE:
-Why, I pray you, sir, the unshares Margaret.
-
-LUCIO:
-Have you not changed to his bed-bed to prove me; and here
-well hencefore you in the rash prisoners have to the ground.
-```
-
- 使用 `cpu` 训练 GPT:
-
-```
-$ python train.py config/train_shakespeare_char.py --device=cpu --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0
-```
-
-在这里，由于我们在 CPU 而不是 GPU 上运行，我们必须同时设置 `--device=cpu`，并关闭 PyTorch 2.0 编译，同时使用 `--compile=False`。然后，当我们进行评估时，我们得到了一个更嘈杂但更快的估计（`-eval_iters=20`，原来是 `200` ），我们的上下文大小只有 `64` 个字符，而不是 `256` 个，并且每次迭代的批大小只有 `12` 个示例，而不是 `64` 个。我们还将使用更小的 `Transformer`（4 层，4 个头，128 嵌入大小），并将迭代次数减少到 `2000` 次（相应地，通常使用 `--lr_decay_iters` 将学习率降低到 `max_iters` 左右）。因为我们的网络太小了，所以我们也简化了正则化（`--dropout=0.0`）。因此也有更糟糕的样本，但它仍然很有趣：
-
-```
-$ python sample.py --out_dir=out-shakespeare-char --device=cpu
-```
-
-生成如下示例：
-
-```
-Let mother fater, for moir shot.
-
-YORK:
-
-Come you, bay my my as the arfort; though a proce,
-I mone yous'd look somp.
-
-DUKE VINCENNTIzA:
-Hy shame for as the hort whoe head to more
-And that anate quien
-Gedieng all some the shant the bust thine
-As the do may tough; I with incle swoll with not.
+$ pip install torch numpy transformers datasets tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## 复现 GPT-2
