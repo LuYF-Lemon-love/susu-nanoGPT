@@ -13,26 +13,6 @@ $ pip install --upgrade pip
 $ pip install torch numpy transformers datasets tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 复现 GPT-2
-
-我们首先标记数据集，在本例中为 [OpenWebText-10k](https://huggingface.co/datasets/stas/openwebtext-10k)：
-
-```
-$ python data/openwebtext/prepare.py
-```
-
-这将下载并标记 [OpenWebText-10k](https://huggingface.co/datasets/stas/openwebtext-10k) 数据集。它将创建一个 `train.bin` 和 `val.bin`，在一个序列中保存 GPT2 BPE id，存储为 uint16 字节。然后我们就可以开始训练了。
-
-```
-$ python train.py config/train_gpt2.py
-```
-
-生成示例：
-
-```shell
-$ python sample.py
-```
-
 ## 微调
 
 微调与训练没有什么不同，我们只是确保从预先训练的模型中初始化，并以较小的学习率进行训练。关于如何在新文本上微调 `GPT` 的示例，请转到 `data/shakespeare` 并运行 `prepare.py` 下载小的 `shakespeare` 数据集，并使用 `GPT-2` 中的 OpenAI BPE 标记器将其呈现为 `train.bin` 和 `val.bin` 。
