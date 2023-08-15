@@ -5,7 +5,7 @@ eval_interval = 100
 log_interval = 10
 always_save_checkpoint = True
 # wandb logging
-wandb_log = True
+wandb_log = False
 wandb_project = 'wiki-zh'
 wandb_run_name = 'gpt2'
 # data
