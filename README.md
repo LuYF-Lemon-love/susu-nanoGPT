@@ -13,37 +13,6 @@ $ pip install --upgrade pip
 $ pip install torch numpy transformers datasets tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 微调
-
-微调与训练没有什么不同，我们只是确保从预先训练的模型中初始化，并以较小的学习率进行训练。关于如何在新文本上微调 `GPT` 的示例，请转到 `data/shakespeare` 并运行 `prepare.py` 下载小的 `shakespeare` 数据集，并使用 `GPT-2` 中的 OpenAI BPE 标记器将其呈现为 `train.bin` 和 `val.bin` 。
-
-```
-$ python data/shakespeare/prepare.py
-$ python train.py config/finetune_shakespeare.py
-```
-
-基本上，我们使用 `init_from` 从 GPT2 检查点进行初始化，并像往常一样进行训练，只是时间更短，学习率很低。如果内存不足，请尝试减小模型大小（它们是 `{'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'}`），或者可能减小 `block_size`（上下文长度）。根据配置文件，最好的检查点（最低的验证损失）将保存在 `out_dir` 目录中，例如默认情况下在 `out-shakespeare` 中。然后，您可以运行代码  `python sample.py --out_dir=out-shakespeare`：
-
-```
-THEODORUS:
-O hush, you have nought to say of your father's war.
-
-HIPPOCENTES:
-O, but I will tell you the reason thereof.
-
-THEODORUS:
-O thou, Hippocrates, what didst thou answer him?
-
-HIPPOCENTES:
-O, when he had so much as said, to hold his peace.
-
-THEODORUS:
-O, come home: I will trouble you not to hear all that I say.
-
-HIPPOCENTES:
-O, to hear it, and to take it well.
-```
-
 ## 抽样 / 推断
 
 使用脚本 `sample.py` 可以从 OpenAI 发布的预先训练的 GPT-2 模型中进行采样，也可以从您自己训练的模型中采样。例如，这里有一种从最大的可用 `gpt2-xl` 模型中采样的方法：
