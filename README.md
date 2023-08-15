@@ -147,10 +147,6 @@ $ python sample.py \
 
 如果您想从您训练的模型中进行采样，请使用 `--out_dir` 适当地指向代码。您还可以用文件中的一些文本提示模型，例如 `$ python sample.py --start=FILE:prompt.txt`。
 
-## efficiency notes
-
-For simple model benchmarking and profiling, `bench.py` might be useful. It's identical to what happens in the meat of the training loop of `train.py`, but omits much of the other complexities.
-
 ## 参考
 
 [1] [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT)
