@@ -57,7 +57,7 @@ print("加载分词器...")
 class CustomDecoder:
     def decode_chain(self, tokens: List[str]) -> List[str]:
         return [f"{t}" for t in tokens]
-tokenizer = Tokenizer.from_file(os.path.join('data', checkpoint['config']['dataset'], "data/wiki_zh_2019/tokenizer.json"))
+tokenizer = Tokenizer.from_file(os.path.join('data', checkpoint['config']['dataset'], "tokenizer.json"))
 tokenizer.decoder = Decoder.custom(CustomDecoder())
 encode = lambda s: tokenizer.encode(s).ids
 decode = lambda l: tokenizer.decode(l)

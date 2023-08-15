@@ -15,12 +15,18 @@ $ pip install torch numpy transformers datasets wandb tqdm jupyter -i https://py
 
 ## 开始
 
-1. 按照 [维基百科中文数据集处理步骤](data/wiki_zh_2019/README.md) 预处理数据:
+1. 按照 [维基百科中文数据集处理步骤](data/wiki_zh_2019/README.md) 预处理数据。
 
-2. 开始训练:
+2. 开始训练：
 
 ```shell
 $ python train.py config/train_wiki.py
+```
+
+3. 生成文本：
+
+```shell
+$ python sample.py
 ```
 
 ## 参考
