@@ -66,3 +66,5 @@ $ python sample.py
 [17] [custom_components.py](https://github.com/huggingface/tokenizers/blob/9a93c50c25c1e0b73a85584f327113bcbef5ac80/bindings/python/examples/custom_components.py#L44)
 
 [18] [OpenWebText-10k](https://huggingface.co/datasets/stas/openwebtext-10k)
+
+[19] [the prefix '_orig_mod.'](https://github.com/karpathy/nanoGPT/issues/325)

@@ -13,9 +13,9 @@ $ unzip wiki_zh_2019.zip
 
 3. 运行 `python prepare.py` 将维基百科中文数据集保存到二进制文件中用于训练。
 
-- train.bin: ~536M
+- train.bin: ~813M
 
-- val.bin: ~2.5M
+- val.bin: ~4.2M
 
 数据集 (`wiki_zh_2019.zip`): 链接：https://pan.baidu.com/s/1bkukbbKUoyt0gjnOyqMOtA?pwd=fxc1 提取码：fxc1
 
