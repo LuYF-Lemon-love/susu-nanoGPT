@@ -10,7 +10,7 @@ $ python -m venv env
 $ source env/bin/activate
 $ which python
 $ pip install --upgrade pip
-$ pip install torch numpy transformers datasets wandb tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
+$ pip install torch numpy transformers datasets wandb tqdm jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## 开始
