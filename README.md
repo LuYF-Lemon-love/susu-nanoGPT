@@ -10,7 +10,17 @@ $ python -m venv env
 $ source env/bin/activate
 $ which python
 $ pip install --upgrade pip
-$ pip install torch numpy transformers datasets tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
+$ pip install torch numpy transformers datasets wandb tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+## 开始
+
+1. 按照 [维基百科中文数据集处理步骤](data/wiki_zh_2019/README.md) 预处理数据:
+
+2. 开始训练:
+
+```shell
+$ python train.py config/train_wiki.py
 ```
 
 ## 参考
